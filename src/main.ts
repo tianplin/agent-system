@@ -9,7 +9,12 @@ import "element-ui/lib/theme-chalk/index.css";
 import "@/styles/index.scss"
 import moment from 'moment'//导入文件 
 import Viewer from 'v-viewer';
+
+import Fragment from 'vue-fragment'
+
 import 'viewerjs/dist/viewer.css';
+
+
 
 Vue.config.productionTip = false;
 
@@ -26,12 +31,15 @@ Vue.use(ElementUI)
 //引用moment时间插件 具体方法见http://momentjs.cn/
 Vue.prototype.$moment = moment
 
+
 //引用图片查看器
 Vue.use(Viewer, {
   defaultOptions: {
     zIndex: 9999
   }
 })
+
+Vue.use(Fragment.Plugin)
 
 new Vue({
   router,
